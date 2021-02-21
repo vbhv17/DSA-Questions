@@ -1,5 +1,5 @@
 
-Approach 1: Count number of 0's, 1's & 2's and then create an array of size N and insert 0's then 1's and then 2's
+Approach 1: Count number of 0s, 1s & 2s and then create an array of size N and insert 0s then 1s and then 2s
 
 void sort012(int a[], int n){
 
