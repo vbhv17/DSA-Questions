@@ -75,6 +75,36 @@ int main() {
 		for (int i = 0; i < n; i++)
 			cin >> a[i];
 
+		int first = BinarySearch(a, n, x, -1);  //toggler is -1
+		int last = BinarySearch(a, n, x, 1);   //toggler is 1
+
+		if (first == -1)
+			cout << -1 << endl;
+		else
+			cout << first << " " << last << endl;
+	}
+}
+
+TC: O(LogN) AS: O(1)
+
+	
+Approach 3
+Binary Search With C++ STL
+Using lowerbound and upperbound
+int main() {
+
+	int t;
+	cin >> t;
+	while (t--)
+	{
+		int n;
+		cin >> n;
+		int x;
+		cin >> x;
+		int a[n];
+		for (int i = 0; i < n; i++)
+			cin >> a[i];
+
 		int first = BinarySearch(a, n, x, -1);
 		int last = BinarySearch(a, n, x, 1);
 
@@ -85,5 +115,5 @@ int main() {
 	}
 }
 
-TC: O(LogN) AS: O(1)
+	
   
