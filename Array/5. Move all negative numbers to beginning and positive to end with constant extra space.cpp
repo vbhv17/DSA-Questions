@@ -18,3 +18,25 @@ void move(int a[], int n)
 }
 
 TC: O(N)  AS: O(1)
+	
+Approach 4: Partition Method Of Quick Sort with Pivot 
+void quickSortPartitionwithPivot(int a[], int n)
+{
+	int pivot = 0;
+	int j = -1;
+	fon(int i = 0 ; i < n; i++)
+	{
+		if (a[i] < pivot)
+		{
+			j++;
+			swap(a[i], a[j]);
+		}
+		else
+		{
+			continue;
+		}
+	}
+}
+
+TC: O(N)   AS: O(1)
+	
