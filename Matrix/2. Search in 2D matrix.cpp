@@ -56,5 +56,5 @@ public:
     }
 };
 
-TC: O(m+n)  AS: O(1)
+TC: O(Log(n*m)) AS: O(1)
 
