@@ -1,4 +1,4 @@
-Search a value in BST : Given root node & a value x, find if x is present in BST or not
+Search a value in BST : Given root node & a value x, find if x is present in BST or not  //Refer Notes
 2 Methods: Iterative & Recursive
 
  Recursive:
