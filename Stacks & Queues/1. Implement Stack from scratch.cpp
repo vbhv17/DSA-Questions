@@ -98,50 +98,50 @@ StackNode* newNode(int data)
     return stackNode;
 }
  
-int isEmpty(StackNode* root)
+int isEmpty(StackNode* head)
 {
-    return !root;
+    return !head;
 }
  
-void push(StackNode** root, int data)
+void push(StackNode** head, int data)
 {
     StackNode* stackNode = newNode(data);
-    stackNode->next = *root;
-    *root = stackNode;
+    stackNode->next = *head;
+    *head = stackNode;
     cout << data << " pushed to stack\n";
 }
  
-int pop(StackNode** root)
+int pop(StackNode** head)
 {
-    if (isEmpty(*root))
+    if (isEmpty(*head))
         return INT_MIN;
-    StackNode* temp = *root;
-    *root = (*root)->next;
+    StackNode* temp = *head;
+    *head = (*head)->next;
     int popped = temp->data;
     free(temp);
  
     return popped;
 }
  
-int peek(StackNode* root)
+int peek(StackNode* head)
 {
-    if (isEmpty(root))
+    if (isEmpty(head))
         return INT_MIN;
-    return root->data;
+    return head->data;
 }
  
 // Driver code
 int main()
 {
-    StackNode* root = NULL;
+    StackNode* head = NULL;
  
-    push(&root, 10);
-    push(&root, 20);
-    push(&root, 30);
+    push(&head, 10);
+    push(&head, 20);
+    push(&head, 30);
  
-    cout << pop(&root) << " popped from stack\n";
+    cout << pop(&head) << " popped from stack\n";
  
-    cout << "Top element is " << peek(root) << endl;
+    cout << "Top element is " << peek(head) << endl;
  
     return 0;
 }
