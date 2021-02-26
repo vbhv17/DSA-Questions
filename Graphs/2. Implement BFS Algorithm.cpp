@@ -24,7 +24,7 @@ void BFS(vector<int> adj[], int v, int s)
     }
 }
 
-TC: O(V+E)   AS:O(N)
+TC: O(V+E)   AS:O(V)
   
   
 Second Version: When Source is not given
@@ -51,7 +51,7 @@ void BFS(vector<int> adj[], int s, bool visited[])
 }
 
 
-void BFSDis(vector<int> adj[], int v)
+void BFSDis(vector<int> adj[], int v)   //function for checking for any disconnected vertex of graph
 {
     bool visited[v + 1];
 
@@ -59,7 +59,8 @@ void BFSDis(vector<int> adj[], int v)
         visited[i] == false;
 
     for (int i = 0; i < v; i++)
-        if (visited[i] == false)
+        if (visited[i] == false)       //if any vertex is not yet visited then call BFS for that vertex
             BFS(adj, i, visited);
 }
   
+TC: O(V+E)   AS:O(V)
