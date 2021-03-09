@@ -64,3 +64,4 @@ TC: O(N)   AS:O(1)
   return maxProfit;
 }
   
+TC: O(N)   AS:O(1)
