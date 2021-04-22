@@ -57,3 +57,6 @@ Node* sortedMerge(Node* head1, Node* head2)
       
     return head;
 }  
+
+TC: O(M+N)  M - length of first LL, N - Length of second list
+   AS:O(1)
