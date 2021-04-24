@@ -47,6 +47,39 @@ int trappingWater(int arr[], int n) {
 TC: O(N)  AS:O(N)
   
   
-Approach 3: Best Solution:
+Approach 3: Best Solution: Using two pointers
 https://youtu.be/m18Hntz4go8?t=515
+int trappingWater(int arr[], int n) {
 
+    int left = 0, right = n - 1, lmax = 0, rmax = 0, water = 0;
+
+    while (left <= right)
+    {
+      if (arr[left] <= arr[right])
+      {
+        if (arr[left] >= lmax)
+          lmax = arr[left];
+
+        else
+          water = water + lmax - arr[left];
+
+        left++;
+      }
+
+      else
+      {
+        if (arr[right] >= rmax)
+          rmax = arr[right];
+
+        else
+          water = water + rmax - arr[right];
+
+        right--;
+      }
+
+    }
+
+    return water;
+  }
+
+TC:O(N) AS:O(1)
