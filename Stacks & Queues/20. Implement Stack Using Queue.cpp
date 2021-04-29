@@ -83,4 +83,5 @@ int main()
          << endl;
     return 0;
 }
-// This code is contributed by Chhavi
+
+// Here, we have made push operation costly, however we can write another solution making pop operation costly 
