@@ -1,31 +1,86 @@
+Using BFS
+    bool detectCycle(int s, int V, vector<int> adj[], vector<int> &vis)
+    {
+        queue<pair<int, int>> q;
+        q.push({s, -1});
+        vis[s]=1;
+        
+        while(!q.empty())
+        {
+            int node = q.front().first;
+            int par = q.front().second;
+            
+            q.pop();
+            
+            for(auto it : adj[node])
+            {
+                if(!vis[it])
+                {
+                    q.push({it, node});
+                    vis[it]=1;
+                }
+                
+                else if(it!=par)
+                {
+                    return true;
+                }
+            }
+            
+        }
+        
+        return false;
+        
+    }
+	bool isCycle(int V, vector<int>adj[])
+	{
+	    vector<int> vis(V,0);
+	    for(int i=0;i<V;i++)
+	    {
+	        if(!vis[i])
+	        {
+	            if(detectCycle(i, V, adj, vis))
+	              return true;
+	        }
+	    }
+	}
+
 Using DFS
 
-DFSRec(vector<int> adj[], int s, bool visited[], int parent)
-{
-    visited[s]=true;
-    for(int u: adj[s])
+bool detectCycle(int node , int parent, vector<int> adj[], vector<int> &vis)
     {
-        if(visited[u]==false)
-            if(DFSRec(adj,u,visited,s)==true)
+        vis[node]=1;
+        for(auto it : adj[node])
+        {
+            if(!vis[it])
+            {
+                if(detectCycle(it, node, adj, vis))
+                    return true;
+            }
+            
+            else if(it!=parent)
+            {
                 return true;
-
-        else if(u!=parent)
-            return true;    
+            }
+        }
+       
+        return false;
+        
     }
-    return false;
-}
-
-DFS(vector<int> adj, int v)
-{
-    for(int i=0;i<v;i++)
-       visited[v]=false;
-
-    for(int i=0;i<v;i++)
-        if(visited[v]=false)
-            if(DFSRec(adj,i,visited,-1)==true)
-                return true;
-
-    return false;        
-}
+    
+	bool isCycle(int V, vector<int>adj[])
+	{
+	    vector<int> vis(V+1 ,0);
+	    
+	    for(int i=0;i<V;i++)
+	    {
+	        if(!vis[i])
+	        {
+	            if(detectCycle(i, -1, adj, vis))
+	              return true;
+	        }
+	    }
+	    
+	    return false;
+	}
 
 TC:O(V+E)  AS:O(V)
