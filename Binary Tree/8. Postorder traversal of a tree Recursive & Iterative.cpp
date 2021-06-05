@@ -56,3 +56,41 @@ public:
     return ans;
   }
 };
+
+Trick Iterative Solution:  https://www.youtube.com/watch?v=5BzvEmscu-o&ab_channel=RachitJainRachitJain
+class Solution {
+public:
+  unordered_map<TreeNode*, int> cnt;
+  void trickPostorder(TreeNode* root, vector<int> &ans)
+  {
+    stack<TreeNode*> st;
+    st.push(root);
+    while (!st.empty())
+    {
+      TreeNode* curr = st.top();
+      if (curr == NULL)
+      {
+        st.pop();
+        continue;
+      }
+
+      if (cnt[curr] == 0)
+        st.push(curr->left);
+      else if (cnt[curr] == 1)
+        st.push(curr->right);
+      else if (cnt[curr] == 2)
+        ans.push_back(curr->val);
+      else
+        st.pop();
+
+      cnt[curr]++;
+
+    }
+  }
+  vector<int> postorderTraversal(TreeNode* root) {
+
+    vector<int> ans;
+    trickPostorder(root, ans);
+    return ans;
+  }
+};
