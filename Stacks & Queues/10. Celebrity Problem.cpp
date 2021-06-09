@@ -96,6 +96,21 @@ TC:O(N)
 SC:O(N)
   
 Approach 3: Using 2 pointers
+Approach: The idea is to use two pointers, one from start and one from the end. Assume the start person is A,
+and the end person is B. If A knows B, then A must not be the celebrity. Else, B must not be the celebrity. At the end of the loop, 
+only one index will be left as a celebrity. Go through each person again and check whether this is the celebrity. 
+The Two Pointer approach can be used where two pointers can be assigned,
+one at the start and other at the end and the elements can be compared and the search space can be reduced. 
+ 
+Algorithm : 
+Create two indices a and b, where a = 0 and b = n-1
+Run a loop until a is less than b.
+Check if a knows b, then a can’t be celebrity. so increment a, i.e. a++
+Else b cannot be celebrity, so decrement b, i.e. b–
+Assign a as the celebrity
+Run a loop from 0 to n-1 and find the count of persons who knows the celebrity and the number of people whom the celebrity knows. 
+  if the count of persons who knows the celebrity is n-1 and the count of people whom the celebrity knows is 0 then return the id of celebrity else return -1.
+    
 class Solution
 {
 public:
