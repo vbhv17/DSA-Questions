@@ -1,5 +1,5 @@
 If a number is a power of two , it will have exactly only one bit set in its binary representation
-
+//code by vbhv17
 class Solution {
 public:
   // Function to check if given number n is a power of two.
@@ -24,3 +24,16 @@ public:
 
 TC: O(No if set bits in N)   //Brian Kerninghans
 SC: O(1)
+  
+  Simple Solution using Brian Kerninghans //Refer Track
+  class Solution{
+    public:
+    // Function to check if given number n is a power of two.
+    bool isPowerofTwo(long long n){
+        if(n==0)
+           return false; 
+        return((n & (n-1)) == 0);
+    }
+};
+
+
