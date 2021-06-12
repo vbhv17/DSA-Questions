@@ -1,4 +1,7 @@
-Super Naive:  First row becomes last column, second row becomes second last column and so on,
+https://leetcode.com/problems/rotate-image/submissions/
+
+Super Naive: (Using Extra Space)
+              First row becomes last column, second row becomes second last column and so on,
               Create a temp matrix, copy elements from og matrix to temp mtrix using this idea.
               Copy elements back from temp to og matrix
 
@@ -34,7 +37,8 @@ Better Solution: Tranpose of a matrix inverts the rows and columns, first row be
                    
          IDEA: We first do tranpose of given matrix so that rows and columns are interchanged after that, 
                we reverse every row of matrix
-               
+     https://www.youtube.com/watch?v=Y72QeX0Efxw&ab_channel=takeUforward
+     
  class Solution {
 public:
     void rotate(vector<vector<int>>& matrix) {
@@ -63,9 +67,4 @@ public:
 };
 
 TC:O(N*N)
-SC:O(1)
-  
-  
-
-               
-               
+SC:O(1)          
