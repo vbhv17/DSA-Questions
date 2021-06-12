@@ -3,7 +3,9 @@ https://practice.geeksforgeeks.org/problems/isomorphic-strings-1587115620/1
 
 Approach 1:
 1. Count the occurence of every character in both the strings
-In this approach, we will count the number of occurrences of a particular character in both the string using two arrays, while we will compare the two arrays if at any moment with the loop the count of the current character in both strings becomes different we return false, else after the loop ends we return true.
+In this approach, we will count the number of occurrences of a particular character in both the string using two arrays,
+while we will compare the two arrays if at any moment with the loop the count of the current character in both strings becomes different we return false,
+else after the loop ends we return true.
 Follow the code given below you will understand everything.
   
   class Solution
@@ -31,7 +33,7 @@ Follow the code given below you will understand everything.
 };
 
 
-Approach 2:
+Approach 2: https://www.youtube.com/watch?v=TsTuKNA2K2k&t=315s&ab_channel=CodeLibrary
 The idea is to create an array to store mappings of processed characters. 
   
   1) If lengths of str1 and str2 are not same, return false.
