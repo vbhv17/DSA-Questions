@@ -1,0 +1,42 @@
+https://www.youtube.com/watch?v=rlCSjCGc3Z0&ab_channel=ApnaCollege
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  string s;
+  cin >> s;
+  stack<char> st;
+  bool ans = false;
+  for (int i = 0; i < s.length(); i++)
+  {
+    if (s[i] == '(')
+      st.push(s[i]);
+
+    else if (s[i] == '+' or s[i] == '-' or s[i] == '*' or s[i] == '/')
+      st.push(s[i]);
+
+    else if (s[i] == ')')             
+    {
+      if (st.top() == '(')
+      {
+        ans = true;
+        break;
+      }
+
+      while (st.top() == '+' or st.top() == '-' or st.top() == '*' or st.top() == '/')
+      {
+        st.pop();
+      }
+
+      st.pop();
+
+    }
+  }
+
+  cout<<ans;
+}
+
+TC:O(Length of string)
+SC:O(Length of string)
