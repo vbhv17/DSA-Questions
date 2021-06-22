@@ -2,6 +2,8 @@ Approach: We have an unsorted array, we store every element of this unsorted arr
           in a vector of pairs. Now we sort this vector, we get elements in sorted order.
           No we try to convert this sorted vector to the original array.
           We count the no of swaps we do, in order to do this
+                    
+ https://www.youtube.com/watch?v=1BxbBgNSwHo&ab_channel=CodeLibrary
            
 class Solution
 {
